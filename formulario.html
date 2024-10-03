@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de matrícula</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #F5F5FF;
+            margin: 0;
+            padding: 20px;
+        }
+        .formulario {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #FFFFFF;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #3A5FCD;
+            text-align: center;
+        }
+        h3 {
+            color: #3A5FCD;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input[type="text"], input[type="email"]{
+            width: 70%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="date"], select {
+            width: 30%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .emancipado, .modulos {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        .boton {
+            display: block;
+            width: 30%;
+            padding: 10px;
+            background-color: #3A5FCD;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            
+        }
+        .boton:hover {
+            background-color: #2E46A7;
+        }
+    </style>
+</head>
+<body>
+    <div class="formulario">
+        <h2>Formulario de matrícula</h2>
+        <p>Los campos obligatorios van seguidos de *</p>
+
+        <form action="Controllerjsps" method="post">
+            <h3>Datos personales</h3>
+            <fieldset>
+                <legend>Alumno</legend>
+                <label for="nombre">Nombre: *</label>
+                <input type="text" id="nombre" name="nombre" required>
+
+                <label for="apellido1">Primer apellido: *</label>
+                <input type="text" id="apellido1" name="apellido1" required>
+
+                <label for="apellido2">Segundo apellido: *</label>
+                <input type="text" id="apellido2" name="apellido2">
+
+                <label for="email">Correo electrónico: *</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="fecha-nacimiento">Fecha de nacimiento: *</label>
+                <input type="date" id="fecha-nacimiento" name="fecha-nacimiento" required>
+
+                <label for="provincia-nacimiento">Provincia de nacimiento:</label>
+                <select id="provincia-nacimiento" name="provincia-nacimiento">
+                    <option value="Albacete">Albacete</option>
+                    <option value="CiudadReal">Ciudad Real</option>
+                    <option value="Toledo">Toledo</option>
+                    <!-- Añadir más provincias según sea necesario -->
+                </select>
+            </fieldset>
+
+            <fieldset class="emancipado">
+                <legend>Emancipado</legend>
+                <label for="emancipado-si">Sí</label>
+                <input type="radio" id="emancipado-si" name="emancipado" value="si">
+                
+                <label for="emancipado-no">No</label>
+                <input type="radio" id="emancipado-no" name="emancipado" value="no" checked>
+            </fieldset>
+            
+            <h3>Módulos de los que se matricula</h3>
+            <fieldset class="modulos">
+                <legend>Alumno</legend>
+                
+                <label for="modulo1">Desarrollo Web en Entorno Servidor</label>
+                <input type="checkbox" id="modulo1" name="modulo1" checked>
+                
+                <label for="modulo2">Desarrollo Web en Entorno Cliente</label>
+                <input type="checkbox" id="modulo2" name="modulo2" checked>
+                
+                <label for="modulo3">Despliegue de aplicaciones web</label>
+                <input type="checkbox" id="modulo3" name="modulo3">
+                
+                <label for="modulo4">Diseño de interfaces web</label>
+                <input type="checkbox" id="modulo4" name="modulo4">
+                
+                <label for="modulo5">Empresa e iniciativa emprendedora</label>
+                <input type="checkbox" id="modulo5" name="modulo5">
+
+            </fieldset>
+
+            <button type="submit" class="boton">Guardar</button>
+        </form>
+    </div>
+</body>
+</html>
